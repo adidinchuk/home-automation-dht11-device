@@ -208,7 +208,7 @@ void transmit(unsigned char type, char *data)
                 error_delay = MIN_RETRY_TIME;
                 char result[id_length + device_type + msg_type_length + tail_length + msg_body_length] = {0};
                 radio.read(&result, radio.getDynamicPayloadSize());
-                printf("Base waiting for device: %x\n", result[0]);
+                printf("Base waiting for device: %d\n", result[0]);
                 if (result[0] == device_id)
                 {
                     printf("Message processed by home base, releasing channel.\n\r");
@@ -242,7 +242,7 @@ void transmit(unsigned char type, char *data)
                 error_delay = MIN_RETRY_TIME;
                 char result[id_length + device_type + msg_type_length + tail_length + msg_body_length] = {0};
                 radio.read(&result, radio.getDynamicPayloadSize());
-                printf("Base waiting for device: %x\n", result[0]);
+                printf("Base waiting for device: %d\n", result[0]);
                 if (result[0] == 0)
                 {
                     printf("Home base free and ready to recieve.\n\r");
